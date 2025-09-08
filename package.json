@@ -1,4 +1,18 @@
 {
+  "name": "@anygridtech/frappe-types",
+  "version": "1.0.0",
+  "description": "TypeScript type definitions for Frappe",
+  "types": "frappe/frappe.d.ts",
+  "files": [
+    "frappe/**/*.d.ts"
+  ],
+  "keywords": [
+    "frappe",
+    "typescript",
+    "types"
+  ],
+  "author": "AnyGrid Tech",
+  "license": "MIT",
   "dependencies": {
     "@types/jquery": "^3.5.33"
   }

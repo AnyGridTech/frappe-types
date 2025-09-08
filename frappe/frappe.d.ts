@@ -1,11 +1,11 @@
-import { db } from "./frappe/frappe-db";
-import { ui } from "./frappe/frappe-ui";
-import { utils } from "./frappe/frappe-utils";
-import { model } from "./frappe/frappe-model";
-import { boot } from "./frappe/frappe-boot";
-import { datetime } from "./frappe/frappe-datetime";
-import { FrappeExtendedFunctions, FrappeForm } from "./frappe/frappe-core";
-import { dom } from "./frappe/frappe-dom";
+import { db } from "./frappe-db";
+import { ui } from "./frappe-ui";
+import { utils } from "./frappe-utils";
+import { model } from "./frappe-model";
+import { boot } from "./frappe-boot";
+import { datetime } from "./frappe-datetime";
+import { FrappeExtendedFunctions, FrappeForm } from "./frappe-core";
+import { dom } from "./frappe-dom";
 /**
  * The global `frappe` namespace, bundling all related modules.
  */
