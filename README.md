@@ -97,6 +97,8 @@ This will generate a tsconfig.json file with sensible defaults.
 }
 ```
 
+> ⚠️ Important: In case typescript still can't find the global `frappe` namespace and other related entities after copying the `tsconfig.json` file, please try closing and reopening your code editor.
+
 
 (Optional) Ensure you have a central entry file (like src/index.ts or src/globals.d.ts) where you can import additional type definitions.
 
@@ -115,6 +117,8 @@ pnpm add -D @anygridtech/frappe-types
 
 ## ⚙️ Setup
 
+> If you copied the `tsconfig.json` file provided above, you can skip the Setup part.
+
 After installation, you need to tell TypeScript how to find and use these global type definitions. There are two primary ways to do this:
 
 ### ✅ Option 1: Explicit Import
@@ -132,9 +136,7 @@ Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `ts
 ```json
 {
   "compilerOptions": {
-    "types": [
-      "@anygridtech/frappe-types" // 👈👈👈 Just add this part
-    ]
+    "types": [ "@anygridtech/frappe-types" ]
   }
 }
 ```
