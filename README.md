@@ -5,7 +5,7 @@
 
 > Comprehensive TypeScript definitions for the Frappe Framework’s client-side JavaScript API.
 
-This package provides fully-typed global variables and functions commonly injected by Frappe in the browser — such as `frappe`, `cur_frm`, `__`, `msgprint`, and more — allowing you to write **modern, type-safe** custom scripts with confidence.
+This package provides fully-typed global variables and functions commonly injected by Frappe in the browser such as `frappe`, `cur_frm`, `__`, `msgprint`, and much more, allowing you to write **modern, type-safe** custom frappe apps with confidence.
 
 ---
 
