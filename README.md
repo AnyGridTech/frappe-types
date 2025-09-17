@@ -1,31 +1,50 @@
-@anygridtech/frappe-types
-![alt text](https://img.shields.io/npm/v/%40anygridtech%2Ffrappe-types.svg)
+# @anygridtech/frappe-types
 
-![alt text](https://img.shields.io/badge/License-MIT-blue.svg)
-A comprehensive set of TypeScript type definitions for the Frappe Framework's client-side JavaScript environment.
-This package provides types for the global variables and functions that Frappe injects into the browser, such as frappe, cur_frm, __, msgprint, and many others. It empowers you to write modern, type-safe custom scripts for your Frappe applications with confidence.
-Why use this package?
-The Frappe Framework provides a powerful client-side API, but it's traditionally used with plain JavaScript. This leads to common issues:
-Typographical errors in object properties (frm.doc.customer_name vs frm.doc.customer_nam).
-Uncertainty about the shape of API responses or function parameters.
-Difficulty in refactoring code without breaking things.
-Poor editor support for autocompletion and documentation.
-@anygridtech/frappe-types solves these problems by enabling static type-checking. Your editor and the TypeScript compiler can now:
-✅ Provide intelligent autocompletion for frappe objects, form methods, and more.
-✅ Catch errors at compile-time, before your code ever runs in the browser.
-✅ Serve as inline documentation, making the API easier to discover and use.
-✅ Improve code quality and maintainability for complex client scripts.
-What's Included?
-This package provides types for the most commonly used global objects, including:
-frappe: The main Frappe API object, including frappe.call, frappe.db, frappe.ui.form, frappe.msgprint, etc.
-cur_frm: The current form object, with typed access to cur_frm.doc, cur_frm.set_value, cur_frm.refresh_field, etc.
-__: The translation function.
-Utility functions like msgprint, cstr, flt, and more.
-...and the list is continuously expanding!
-Installation
-As this is a development-only package, install it as a devDependency.
-code
-Bash
+![npm version](https://img.shields.io/npm/v/%40anygridtech%2Ffrappe-types.svg)
+![license](https://img.shields.io/badge/License-MIT-blue.svg)
+
+> Comprehensive TypeScript definitions for the Frappe Framework’s client-side JavaScript API.
+
+This package provides fully-typed global variables and functions commonly injected by Frappe in the browser — such as `frappe`, `cur_frm`, `__`, `msgprint`, and more — allowing you to write **modern, type-safe** custom scripts with confidence.
+
+---
+
+## 🚀 Why Use This Package?
+
+The Frappe Framework offers a powerful client-side API — but it’s built around plain JavaScript, which comes with common issues:
+
+- ❌ Typing mistakes (e.g. `frm.doc.customer_name` vs `frm.doc.customer_nam`)
+- ❌ No clarity on the shape of API responses
+- ❌ Fragile code during refactors
+- ❌ Poor autocomplete and inline documentation
+
+With `@anygridtech/frappe-types`, you get:
+
+✅ Accurate autocompletion  
+✅ Compile-time error checking  
+✅ Inline documentation support  
+✅ Improved code maintainability and developer experience
+
+---
+
+## 📦 What’s Included?
+
+This package includes type definitions for commonly used global objects:
+
+- `frappe`: Includes `frappe.call`, `frappe.db`, `frappe.ui.form`, `frappe.msgprint`, and more
+- `cur_frm`: The current form object, including `cur_frm.doc`, `cur_frm.set_value`, `cur_frm.refresh_field`, etc.
+- `__`: The translation function
+- Utility functions like `msgprint`, `cstr`, `flt`, and more
+
+> 🧩 The list is continuously expanding as new globals and patterns are added.
+
+---
+
+## 📥 Installation
+
+Install as a development dependency:
+
+```bash
 # Using npm
 npm install --save-dev @anygridtech/frappe-types
 
@@ -34,6 +53,8 @@ yarn add --dev @anygridtech/frappe-types
 
 # Using pnpm
 pnpm add -D @anygridtech/frappe-types
+```
+
 Setup
 After installation, you need to tell TypeScript how to find and use these global type definitions. There are two primary ways to do this.
 Option 1: Explicit Import (Recommended)
