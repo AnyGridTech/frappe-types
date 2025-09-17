@@ -47,7 +47,13 @@ Before installing @anygridtech/frappe-types, make sure your project is already c
 Install TypeScript (if not already installed):
 
 ```bash
-npm install --save-dev typescript
+npm install typescript
+```
+
+It is also recommended to install jQuery types as Frappe makes use of it very often.
+
+```bash
+npm install @types/jquery
 ```
 
 Initialize a tsconfig.json in your project root (if you don’t have one yet):
@@ -57,6 +63,7 @@ npx tsc --init
 ```
 
 This will generate a tsconfig.json file with sensible defaults. 
+
 > One recommended tsconfig.json file would be as below, feel free to copy it.
 
 ```json
