@@ -61,8 +61,6 @@ After installation, you need to tell TypeScript how to find and use these global
 
 ### ✅ Option 1: Explicit Import
 
-This is the modern, recommended approach.
-
 Simply add the following import statement to a central file in your project, such as an entry point (`index.ts`, `main.ts`) or a dedicated type definition file (`globals.d.ts`):
 
 ```ts
@@ -70,8 +68,6 @@ import '@anygridtech/frappe-types';
 ```
 
 ### ✅ Option 2: Modifying your project's tsconfig.json file
-
-This method involves configuring TypeScript to automatically load the types by editing your `tsconfig.json`.
 
 Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `tsconfig.json`:
 
@@ -85,7 +81,7 @@ Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `ts
 }
 ```
 
-> ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
+> ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", "jquery", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
 
 ## 🤝 Contributing
 
