@@ -55,32 +55,36 @@ yarn add --dev @anygridtech/frappe-types
 pnpm add -D @anygridtech/frappe-types
 ```
 
-Setup
-After installation, you need to tell TypeScript how to find and use these global type definitions. There are two primary ways to do this.
-Option 1: Explicit Import (Recommended)
-This is the modern, recommended approach. It is explicit, safe, and doesn't require complex tsconfig.json modifications.
-Simply add the following import statement to a central file in your project, such as an entry point (index.ts, main.ts) or a dedicated type definition file (globals.d.ts).
-code
-TypeScript
-// in src/index.ts or another entry file
+⚙️ Setup
+✅ Option 1: Explicit Import (Recommended)
 
+This is the cleanest and most modern setup — no need to mess with tsconfig.json.
+
+In your main entry file (e.g. src/index.ts or a custom globals.d.ts), simply import the types:
+
+// src/index.ts or globals.d.ts
 import '@anygridtech/frappe-types';
-That's it! This line doesn't add any code to your final JavaScript bundle; it's a signal used exclusively by the TypeScript compiler to load the global types. Once this line is present, all types will be available globally across your entire project.
-Why is this method recommended?
-Explicit is Better than Implicit: It makes it crystal clear where the global types for Frappe are coming from.
-No tsconfig.json Magic: You don't have to manage the delicate types array in your tsconfig.json, which can be a common source of errors.
-Industry Standard: This pattern is used by many modern libraries (like vite/client or @testing-library/jest-dom) to augment the global scope.
-Option 2: Modifying tsconfig.json
-This method involves configuring TypeScript to automatically load the types by editing your tsconfig.json file. It works well but requires careful configuration.
-Add @anygridtech/frappe-types to the compilerOptions.types array in your tsconfig.json.
-code
-JSON
+
+
+This doesn’t bundle any extra code — it's a compiler hint to TypeScript.
+
+Why this approach?
+
+🔍 Clear and explicit origin of global types
+
+❌ No messing with tsconfig.json’s types array
+
+✅ Common practice in modern libraries (like vite/client, jest-dom, etc.)
+
+⚙️ Option 2: tsconfig.json Configuration
+
+Alternatively, you can configure TypeScript to load the types automatically:
+
 // tsconfig.json
 {
   "compilerOptions": {
-    // ...your other options...
     "types": [
-      "node", // 👈 IMPORTANT: Keep other essential types like "node"!
+      "node", // 👈 Keep other required global types
       "@anygridtech/frappe-types"
     ]
   },
@@ -88,30 +92,27 @@ JSON
     "src/**/*"
   ]
 }
-⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
-Usage Example
-Once configured, you can enjoy full TypeScript support in your Frappe client scripts.
-code
-TypeScript
+
+
+⚠️ Important: When using the types array, you must explicitly include all global type packages your project uses (e.g., "node", "jest"). Missing one can cause mysterious errors like Cannot find name 'process'.
+
+🧪 Usage Example
+
+Once configured, you can write fully typed client scripts:
+
 // example.ts
 
-// The Frappe types are now globally available.
-
-// Autocompletion on `frappe.ui.form.on`
+// frappe.ui.form.on now provides full autocomplete
 frappe.ui.form.on('Sales Invoice', {
-  // `frm` is automatically typed as `Frappe.Form` for the 'Sales Invoice' DocType.
-  // Note: For generic DocTypes, you might use `Frappe.Form<MyDocType>`
   refresh(frm) {
     if (!frm.is_new()) {
-      // Autocomplete for form methods and properties.
       frm.set_intro(__("Invoice for {0}", [frm.doc.customer]));
+
       frm.add_custom_button(__('Check Status'), () => {
-        // Autocomplete on frappe.call
         frappe.call({
           method: 'myapp.api.check_invoice_status',
           args: { invoice_name: frm.doc.name },
           callback(response) {
-            // `response.message` can be typed in your API function!
             frappe.msgprint(`Status: ${response.message}`);
           },
         });
@@ -120,15 +121,22 @@ frappe.ui.form.on('Sales Invoice', {
   },
 });
 
-// Using the global `cur_frm` object with type safety
+// Typed usage of cur_frm
 function set_first_item_rate(new_rate: number) {
-  if (cur_frm && cur_frm.doc.items?.length > 0) {
-    // Type-safe access to child table fields
+  if (cur_frm?.doc.items?.length > 0) {
     cur_frm.doc.items[0].rate = new_rate;
     cur_frm.refresh_field('items');
   }
 }
-Contributing
-This project is a community effort. Contributions are highly welcome! If you find a missing or incorrect type, or want to expand the definitions, please feel free to open an issue or submit a pull request.
-License
-This project is licensed under the MIT License.
+
+🤝 Contributing
+
+This project is community-driven — contributions are very welcome!
+
+Found a missing or incorrect type? Want to add more definitions?
+Feel free to open an issue
+ or submit a pull request.
+
+📝 License
+
+MIT © Anygrid Technologies
