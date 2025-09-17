@@ -75,7 +75,7 @@ This will generate a tsconfig.json file with sensible defaults.
     "target": "ES2020",
     "moduleResolution": "Node10",
     "verbatimModuleSyntax": true,
-    "types": ["node", "jquery", "@anygridtech/frappe-types"],
+    "types": ["jquery", "@anygridtech/frappe-types"],
     "sourceMap": true,
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": true,
