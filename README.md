@@ -76,12 +76,9 @@ This method involves configuring TypeScript to automatically load the types by e
 Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `tsconfig.json`:
 
 ```json
-// tsconfig.json
 {
   "compilerOptions": {
-    // ...your other options...
     "types": [
-      "node", // IMPORTANT: Keep other essential types like "node"! DO NOT NEED TO DELETE ANYTHING HERE.
       "@anygridtech/frappe-types" // 👈👈👈 Just add this part
     ]
   }
