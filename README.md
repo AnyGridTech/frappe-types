@@ -13,17 +13,17 @@ This package provides fully-typed global variables and functions commonly inject
 
 The Frappe Framework offers a powerful client-side API — but it’s built around plain JavaScript, which comes with common issues:
 
-❌ Typing mistakes (e.g. `frm.doc.customer_name` vs `frm.doc.customer_nam`)
-❌ No clarity on the shape of API responses
-❌ Fragile code during refactors
-❌ Poor autocomplete and inline documentation
+- ❌ Typing mistakes (e.g. `frm.doc.customer_name` vs `frm.doc.customer_nam`)
+- ❌ No clarity on the shape of API responses
+- ❌ Fragile code during refactors
+- ❌ Poor autocomplete and inline documentation
 
 With `@anygridtech/frappe-types`, you get:
 
-✅ Accurate autocompletion  
-✅ Compile-time error checking  
-✅ Inline documentation support  
-✅ Improved code maintainability and developer experience
+- ✅ Accurate autocompletion  
+- ✅ Compile-time error checking  
+- ✅ Inline documentation support  
+- ✅ Improved code maintainability and developer experience
 
 ---
 
