@@ -59,7 +59,17 @@ pnpm add -D @anygridtech/frappe-types
 
 After installation, you need to tell TypeScript how to find and use these global type definitions. There are two primary ways to do this:
 
-### ✅ Option 1: Modifying your project's tsconfig.json file (Recommended)
+### ✅ Option 1: Explicit Import
+
+This is the modern, recommended approach. It is explicit, safe, and doesn't require complex `tsconfig.json` modifications.
+
+Simply add the following import statement to a central file in your project, such as an entry point (`index.ts`, `main.ts`) or a dedicated type definition file (`globals.d.ts`):
+
+```ts
+import '@anygridtech/frappe-types';
+```
+
+### ✅ Option 2: Modifying your project's tsconfig.json file
 
 This method involves configuring TypeScript to automatically load the types by editing your `tsconfig.json`.
 
@@ -79,16 +89,3 @@ Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `ts
 ```
 
 > ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
-
-
----
-
-### ✅ Option 2: Explicit Import
-
-This is the modern, recommended approach. It is explicit, safe, and doesn't require complex `tsconfig.json` modifications.
-
-Simply add the following import statement to a central file in your project, such as an entry point (`index.ts`, `main.ts`) or a dedicated type definition file (`globals.d.ts`):
-
-```ts
-import '@anygridtech/frappe-types';
-```
