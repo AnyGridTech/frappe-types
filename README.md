@@ -86,3 +86,12 @@ Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `ts
 ```
 
 > ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
+
+## 🤝 Contributing
+
+This project is a community effort. Contributions are highly welcome!
+If you find a missing or incorrect type, or want to expand the definitions, please feel free to open an issue or submit a pull request.
+
+## 📝 License
+
+This project is licensed under the MIT License.
