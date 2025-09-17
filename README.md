@@ -42,6 +42,57 @@ This package includes type definitions for commonly used global objects:
 
 ## 📥 Installation
 
+Before installing @anygridtech/frappe-types, make sure your project is already configured for TypeScript:
+
+Install TypeScript (if not already installed):
+
+```bash
+npm install --save-dev typescript
+```
+
+Initialize a tsconfig.json in your project root (if you don’t have one yet):
+
+```bash
+npx tsc --init
+```
+
+This will generate a tsconfig.json file with sensible defaults. 
+> One recommended tsconfig.json file would be as below, feel free to copy it.
+
+```json
+{
+  "compilerOptions": {
+    "rootDir": "./ts",
+    "outDir": "./js",
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "Node10",
+    "verbatimModuleSyntax": true,
+    "types": ["node", "jquery", "@anygridtech/frappe-types"],
+    "sourceMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+  },
+  "include": ["ts/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+```
+
+
+(Optional) Ensure you have a central entry file (like src/index.ts or src/globals.d.ts) where you can import additional type definitions.
+
 Install as a development dependency:
 
 ```bash
