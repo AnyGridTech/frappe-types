@@ -99,9 +99,6 @@ This will generate a tsconfig.json file with sensible defaults.
 
 > ⚠️ Important: In case typescript still can't find the global `frappe` namespace and other related entities after copying the `tsconfig.json` file, please try closing and reopening your code editor.
 
-
-(Optional) Ensure you have a central entry file (like src/index.ts or src/globals.d.ts) where you can import additional type definitions.
-
 Install as a development dependency:
 
 ```bash
