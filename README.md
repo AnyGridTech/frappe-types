@@ -61,7 +61,7 @@ After installation, you need to tell TypeScript how to find and use these global
 
 ### ✅ Option 1: Explicit Import
 
-This is the modern, recommended approach. It is explicit, safe, and doesn't require complex `tsconfig.json` modifications.
+This is the modern, recommended approach.
 
 Simply add the following import statement to a central file in your project, such as an entry point (`index.ts`, `main.ts`) or a dedicated type definition file (`globals.d.ts`):
 
