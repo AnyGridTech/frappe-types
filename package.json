@@ -16,5 +16,9 @@
   "license": "MIT",
   "dependencies": {
     "@types/jquery": "^3.5.33"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnyGridTech/frappe-types.git"
   }
 }
