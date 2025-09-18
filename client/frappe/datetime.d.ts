@@ -1,3 +1,8 @@
+// frappe/datetime.d.ts
+
+/**
+ * Represents date and time manipulation utilities provided by Frappe.
+ */
 export interface datetime {
   /**
    * Adds a specified number of days to a given date.

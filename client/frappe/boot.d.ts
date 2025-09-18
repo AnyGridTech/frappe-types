@@ -1,3 +1,5 @@
+// frappe/boot.d.ts
+
 /**
  * Represents the `frappe.boot` object, which provides context for the current user and environment.
  * 

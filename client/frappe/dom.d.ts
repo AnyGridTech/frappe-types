@@ -1,3 +1,8 @@
+// frappe/dom.d.ts
+
+/**
+ * Represents the DOM manipulation utilities provided by Frappe.
+ */
 export interface dom {
   /**
          * Activates an element by adding an "active" class.

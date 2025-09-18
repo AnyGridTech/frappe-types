@@ -1,4 +1,5 @@
-import { FrappeDoc, FrappeForm } from "./frappe-core";
+// frappe/db.d.ts
+import { FrappeForm } from "./core";
 
 /**
  * Represents the database module in Frappe, providing methods for CRUD operations and queries.

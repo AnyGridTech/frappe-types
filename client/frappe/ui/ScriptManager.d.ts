@@ -1,3 +1,5 @@
+// frappe/ui/ScriptManager.d.ts
+
 /**
  * ScriptManager for handling form-level scripts and event triggers.
  * @see {@link https://frappeframework.com/docs/user/en/api/form ScriptManager Documentation}

@@ -1,4 +1,5 @@
-import { DocField } from "../frappe-core";
+// frappe/ui/Dialog.d.ts
+import { DocField } from "../core";
 
 /**
  * Dialog box constructor.

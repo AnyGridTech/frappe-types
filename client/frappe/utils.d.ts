@@ -1,4 +1,4 @@
-// types/frappe-utils.d.ts
+// frappe/utils.d.ts
 
 /**
  * Represents utility functions provided by Frappe.

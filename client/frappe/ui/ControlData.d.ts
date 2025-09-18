@@ -1,3 +1,4 @@
+// frappe/ui/ControlData.d.ts
 
 /**
  * Represents the ControlData class in Frappe.

@@ -1,3 +1,5 @@
+// frappe/ui/Scanner.d.ts
+
 /**
  * Scanner utility for barcode and QR code scanning.
  */

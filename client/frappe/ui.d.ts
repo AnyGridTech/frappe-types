@@ -1,3 +1,4 @@
+// frappe/ui.d.ts
 import { Dialog } from './ui/Dialog';
 import { Form } from './ui/Form';
 import { Scanner, ScannerData, ScannerOptions } from './ui/Scanner';

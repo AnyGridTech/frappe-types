@@ -1,4 +1,6 @@
-import { FrappeForm } from "../frappe-core";
+// frappe/ui/Form.d.ts
+
+import { FrappeForm } from "../core";
 import { ControlData } from "./ControlData";
   /**
    * Manages client-side form events.

@@ -1,7 +1,7 @@
-// types/frappe-core.d.ts
+// frappe/core.d.ts
 
 import { DialogField, DialogInstance } from "./ui/Dialog";
-import { ScriptManager, ScriptManagerInstance } from "./ui/ScriptManager";
+import { ScriptManagerInstance } from "./ui/ScriptManager";
 
 /**
  * Represents a generic Frappe document (a database row).

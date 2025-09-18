@@ -1,4 +1,5 @@
-import { FrappeDoc } from "./frappe-core";
+// frappe/model.d.ts
+import { FrappeDoc } from "./core";
 
 /**
  * Represents the Frappe model module, which provides utilities for managing and manipulating documents and their fields.
