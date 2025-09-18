@@ -4,7 +4,8 @@
   "description": "TypeScript type definitions for Frappe",
   "types": "frappe/frappe.d.ts",
   "files": [
-    "frappe/**/*.d.ts"
+    "client/**/*.d.ts",
+    "doctype/**/*.d.ts"
   ],
   "keywords": [
     "frappe",
