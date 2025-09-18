@@ -5,7 +5,7 @@
 
 > Comprehensive TypeScript definitions for the Frappe Framework’s client-side JavaScript API.
 
-This package provides fully-typed global variables and functions commonly injected by Frappe in the browser — such as `frappe`, `cur_frm`, `__`, `msgprint`, and more — allowing you to write **modern, type-safe** custom scripts with confidence.
+This package provides fully-typed global variables and functions commonly injected by Frappe in the browser such as `frappe`, `cur_frm`, `__`, `msgprint`, and much more, allowing you to write **modern, type-safe** custom frappe apps with confidence.
 
 ---
 
@@ -42,6 +42,63 @@ This package includes type definitions for commonly used global objects:
 
 ## 📥 Installation
 
+Before installing @anygridtech/frappe-types, make sure your project is already configured for TypeScript:
+
+Install TypeScript (if not already installed):
+
+```bash
+npm install typescript
+```
+
+It is also recommended to install jQuery types as Frappe makes use of it very often.
+
+```bash
+npm install @types/jquery
+```
+
+Initialize a tsconfig.json in your project root (if you don’t have one yet):
+
+```bash
+npx tsc --init
+```
+
+This will generate a tsconfig.json file with sensible defaults. 
+
+> One recommended tsconfig.json file would be as below, feel free to copy it.
+
+```json
+{
+  "compilerOptions": {
+    "rootDir": "./ts",
+    "outDir": "./js",
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "Node10",
+    "verbatimModuleSyntax": true,
+    "types": ["jquery", "@anygridtech/frappe-types"],
+    "sourceMap": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "removeComments": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+  },
+  "include": ["ts/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+```
+
+> ⚠️ Important: In case typescript still can't find the global `frappe` namespace and other related entities after copying the `tsconfig.json` file, please try closing and reopening your code editor.
+
 Install as a development dependency:
 
 ```bash
@@ -57,11 +114,11 @@ pnpm add -D @anygridtech/frappe-types
 
 ## ⚙️ Setup
 
+> If you copied the `tsconfig.json` file provided above, you can skip the Setup part.
+
 After installation, you need to tell TypeScript how to find and use these global type definitions. There are two primary ways to do this:
 
 ### ✅ Option 1: Explicit Import
-
-This is the modern, recommended approach. It is explicit, safe, and doesn't require complex `tsconfig.json` modifications.
 
 Simply add the following import statement to a central file in your project, such as an entry point (`index.ts`, `main.ts`) or a dedicated type definition file (`globals.d.ts`):
 
@@ -71,21 +128,19 @@ import '@anygridtech/frappe-types';
 
 ### ✅ Option 2: Modifying your project's tsconfig.json file
 
-This method involves configuring TypeScript to automatically load the types by editing your `tsconfig.json`.
-
-Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `tsconfig.json`:
+Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `tsconfig.json`.
 
 ```json
 {
   "compilerOptions": {
-    "types": [
-      "@anygridtech/frappe-types" // 👈👈👈 Just add this part
-    ]
+    "types": [ "@anygridtech/frappe-types" ]
   }
 }
 ```
 
-> ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
+> ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", "jquery", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
+
+> ⚠️ Important: In case typescript still can't find the global `frappe` namespace and other related entities after adding the `@anygridtech/frappe-types` into the `types` array, please try closing and reopening your code editor.
 
 ## 🤝 Contributing
 
