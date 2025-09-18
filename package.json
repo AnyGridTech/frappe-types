@@ -1,6 +1,6 @@
 {
   "name": "@anygridtech/frappe-types",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "TypeScript type definitions for Frappe",
   "types": "frappe/frappe.d.ts",
   "files": [
