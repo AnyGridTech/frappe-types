@@ -1,6 +1,6 @@
 import { FrappeDoc } from "../../client/frappe/core";
 
-interface Item extends FrappeDoc {
+export interface Item extends FrappeDoc {
   item_code: string;
   item_name: string;
   item_group: string;

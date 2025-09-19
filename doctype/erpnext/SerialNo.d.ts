@@ -1,6 +1,6 @@
 import { FrappeDoc } from "../../client/frappe/core";
 
-interface SerialNo extends FrappeDoc {
+export interface SerialNo extends FrappeDoc {
   item_code: string;
   serial_no: string;
   company: string;
