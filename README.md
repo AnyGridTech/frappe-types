@@ -81,7 +81,6 @@ Make sure your project is configured for TypeScript:
 
 ```bash
 npm install typescript
-npm install @types/jquery
 npx tsc --init
 ```
 
