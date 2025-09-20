@@ -1,152 +1,181 @@
-# @anygridtech/frappe-types
+<p align="center">
+  <a href="" rel="noopener">
+    <img width=200px height=200px src="" alt="Project logo">
+  </a>
+</p>
+
+<h3 align="center">@anygridtech/frappe-types</h3>
+
+<div align="center">
 
 ![npm version](https://img.shields.io/npm/v/%40anygridtech%2Ffrappe-types.svg)
 ![license](https://img.shields.io/badge/License-MIT-blue.svg)
+[![Status](https://img.shields.io/badge/status-active-success.svg)]()
+[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
+[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
 
-> Comprehensive TypeScript definitions for the Frappe Framework’s client-side JavaScript API.
-
-This package provides fully-typed global variables and functions commonly injected by Frappe in the browser such as `frappe`, `cur_frm`, `__`, `msgprint`, and much more, allowing you to write **modern, type-safe** custom frappe apps with confidence.
+</div>
 
 ---
 
-## 🚀 Why Use This Package?
+<p align="center">
+Comprehensive TypeScript definitions for the Frappe Framework’s client-side JavaScript API.  
+This package provides fully-typed global variables and functions commonly injected by Frappe in the browser such as `frappe`, `cur_frm`, `__`, `msgprint`, and much more, allowing you to write modern, type-safe custom Frappe apps with confidence.
+<br>
+</p>
+
+## 📝 Table of Contents
+
+- [About](#about)
+- [What’s Included?](#whats_included)
+- [Getting Started](#getting_started)
+- [Installation](#installation)
+- [Setup](#setup)
+- [Usage](#usage)
+- [Deployment](#deployment)
+- [Built Using](#built_using)
+- [Contributing](#contributing)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgement)
+
+---
+
+## 🧐 About <a name = "about"></a>
 
 The Frappe Framework offers a powerful client-side API — but it’s built around plain JavaScript, which comes with common issues:
 
-- ❌ Typing mistakes (e.g. `frm.doc.customer_name` vs `frm.doc.customer_nam`)
-- ❌ No clarity on the shape of API responses
-- ❌ Fragile code during refactors
-- ❌ Poor autocomplete and inline documentation
+- ❌ Typing mistakes (e.g. `frm.doc.customer_name` vs `frm.doc.customer_nam`)  
+- ❌ No clarity on the shape of API responses  
+- ❌ Fragile code during refactors  
+- ❌ Poor autocomplete and inline documentation  
 
-With `@anygridtech/frappe-types`, you get:
+With `@anygridtech/frappe-types`, you get:  
 
 - ✅ Accurate autocompletion  
 - ✅ Compile-time error checking  
 - ✅ Inline documentation support  
-- ✅ Improved code maintainability and developer experience
+- ✅ Improved code maintainability and developer experience  
 
 ---
 
-## 📦 What’s Included?
+## 📦 What’s Included? <a name = "whats_included"></a>
 
-This package includes type definitions for commonly used global objects:
+Type definitions for commonly used global objects:
 
-- `frappe`: Includes `frappe.call`, `frappe.db`, `frappe.ui.form`, `frappe.msgprint`, and more
-- `cur_frm`: The current form object, including `cur_frm.doc`, `cur_frm.set_value`, `cur_frm.refresh_field`, etc.
-- `__`: The translation function
-- Utility functions like `msgprint`, `cstr`, `flt`, and more
+- `frappe`: `frappe.call`, `frappe.db`, `frappe.ui.form`, `frappe.msgprint`, etc.  
+- `cur_frm`: The current form object (`cur_frm.doc`, `cur_frm.set_value`, etc.)  
+- `__`: Translation function  
+- Utilities: `msgprint`, `cstr`, `flt`, etc.  
 
 > 🧩 The list is continuously expanding as new globals and patterns are added.
 
 ---
 
-## 📥 Installation
+## 🏁 Getting Started <a name = "getting_started"></a>
 
-Before installing @anygridtech/frappe-types, make sure your project is already configured for TypeScript:
+These instructions will help you set up the package in a TypeScript project.
 
-Install TypeScript (if not already installed):
+### Prerequisites
+
+Make sure your project is configured for TypeScript:
 
 ```bash
 npm install typescript
-```
-
-It is also recommended to install jQuery types as Frappe makes use of it very often.
-
-```bash
 npm install @types/jquery
-```
-
-Initialize a tsconfig.json in your project root (if you don’t have one yet):
-
-```bash
 npx tsc --init
 ```
 
-This will generate a tsconfig.json file with sensible defaults. 
+---
 
-> One recommended tsconfig.json file would be as below, feel free to copy it.
+## 📥 Installation <a name = "installation"></a>
 
-```json
-{
-  "compilerOptions": {
-    "rootDir": "./ts",
-    "outDir": "./js",
-    "module": "ES2020",
-    "target": "ES2020",
-    "moduleResolution": "Node10",
-    "verbatimModuleSyntax": true,
-    "types": ["jquery", "@anygridtech/frappe-types"],
-    "sourceMap": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitReturns": true,
-    "noImplicitOverride": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "removeComments": true,
-    "esModuleInterop": true,
-    "strict": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-  },
-  "include": ["ts/**/*.ts"],
-  "exclude": ["node_modules"]
-}
-```
-
-> ⚠️ Important: In case typescript still can't find the global `frappe` namespace and other related entities after copying the `tsconfig.json` file, please try closing and reopening your code editor.
-
-Install as a development dependency:
+Install as a dev dependency:
 
 ```bash
-# Using npm
+# npm
 npm install --save-dev @anygridtech/frappe-types
 
-# Using yarn
+# yarn
 yarn add --dev @anygridtech/frappe-types
 
-# Using pnpm
+# pnpm
 pnpm add -D @anygridtech/frappe-types
 ```
 
-## ⚙️ Setup
+---
 
-> If you copied the `tsconfig.json` file provided above, you can skip the Setup part.
+## ⚙️ Setup <a name = "setup"></a>
 
-After installation, you need to tell TypeScript how to find and use these global type definitions. There are two primary ways to do this:
+Two ways to tell TypeScript about these global types:
 
 ### ✅ Option 1: Explicit Import
 
-Simply add the following import statement to a central file in your project, such as an entry point (`index.ts`, `main.ts`) or a dedicated type definition file (`globals.d.ts`):
-
 ```ts
+// in your_project/src/index.ts or your_project/globals.d.ts
 import '@anygridtech/frappe-types';
 ```
 
-### ✅ Option 2: Modifying your project's tsconfig.json file
-
-Add `@anygridtech/frappe-types` to the `compilerOptions.types` array in your `tsconfig.json`.
+### ✅ Option 2: tsconfig.json
 
 ```json
 {
   "compilerOptions": {
-    "types": [ "@anygridtech/frappe-types" ]
+    "types": ["jquery", "@anygridtech/frappe-types"]
   }
 }
 ```
 
-> ⚠️ Important: When you define the types property, TypeScript stops automatically scanning for types in node_modules/@types. You must explicitly list all global type packages your project needs (like "node", "jest", "jquery", etc.). Forgetting to do so is a common cause of "Cannot find name 'process'" or similar errors.
+⚠️ Remember: when you define `types`, you must explicitly list all global type packages (like `node`, `jest`, `jquery`, etc.).
 
-> ⚠️ Important: In case typescript still can't find the global `frappe` namespace and other related entities after adding the `@anygridtech/frappe-types` into the `types` array, please try closing and reopening your code editor.
+---
 
-## 🤝 Contributing
+## 🎈 Usage <a name="usage"></a>
 
-This project is a community effort. Contributions are highly welcome!
-If you find a missing or incorrect type, or want to expand the definitions, please feel free to open an issue or submit a pull request.
+After setup, you can use Frappe globals with full TypeScript support:
 
-## 📝 License
+```ts
+frappe.call({
+  method: "frappe.client.get",
+  args: {
+    doctype: "Customer",
+    name: "CUST-0001"
+  },
+  callback(r) {
+    console.log(r.message);
+  }
+});
+```
 
-This project is licensed under the MIT License.
+---
+
+## 🚀 Deployment <a name = "deployment"></a>
+
+This is a type-only package. Just include it in your dev dependencies — no runtime deployment required.
+
+---
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [Frappe](https://frappeframework.com/)
+
+---
+
+## 🤝 Contributing <a name = "contributing"></a>
+
+This project is a community effort.  
+Contributions are welcome! Open an issue or PR if you find missing or incorrect types.
+
+---
+
+## ✍️ Authors <a name = "authors"></a>
+
+- [@anygridtech](https://github.com/anygridtech) – Maintainers  
+- Inspired by [@kylelobo](https://github.com/kylelobo) – Initial template
+
+---
+
+## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+
+- Frappe community for documentation and examples  
+- Inspiration from open-source type definition projects
