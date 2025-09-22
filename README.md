@@ -1,3 +1,7 @@
+<h1 align="center">
+  🚀 Frappe Typescript
+</h1>
+
 <p align="center">
   <a href="" rel="noopener">
     <img width=200px height=200px src="LOGO.png" alt="Project logo">
