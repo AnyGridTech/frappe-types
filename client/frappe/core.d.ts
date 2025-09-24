@@ -965,6 +965,30 @@ interface DocMeta {
 
 interface FrappeExtendedFunctions {
   /**
+   * Dynamically loads a JavaScript or CSS asset into the current document.
+   * @param assets_path - The path to the asset to load.
+   * @param callback - Optional callback function executed after the asset is loaded.
+   * @example
+   * ```typescript
+   * // load a custom js file
+   * frappe.require('/assets/mysite/js/myscript.js');
+   *
+   * // load a custom css file
+   * frappe.require('/assets/mysite/css/mystyle.css');
+   * 
+   * // load a single js asset file with a callback
+   * frappe.require('/assets/frappe/chat.js', () => {
+   *   frappe.msgprint('Chat JS loaded');
+   * })
+   *
+   * // load multiple assets with a callback
+   * frappe.require(['/assets/frappe/chat.js', '/assets/frappe/chat.css'], () => {
+   *   frappe.msgprint('Chat JS and CSS loaded');
+   * })
+   * ```
+   */
+  require(assets_path: string, callback?: () => void): void;
+  /**
    * Ensures the existence of a nested namespace or object.
    * If the namespace doesn't exist, it initializes it as an empty object.
    * @param namespace - The dot-separated namespace string to provide.
