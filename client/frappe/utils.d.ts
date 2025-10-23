@@ -37,4 +37,10 @@ export interface utils {
    */
   eval: (code: string, context?: Record<string, unknown>) => unknown;
 
+/**
+ * Plays a sound based on the sample name provided.
+ * @param sample_name - The name of the sound sample to play.
+ * @returns A promise that resolves when the sound has finished playing.
+ */
+  play_sound: (sample_name: string) => Promise<void>; // Plays a generic frappe sample.
 }
