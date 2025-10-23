@@ -42,7 +42,5 @@ export interface utils {
  * @param sample_name - The name of the sound sample to play.
  * @returns A promise that resolves when the sound has finished playing.
  */
-
   play_sound: (sample_name: string) => Promise<void>; // Plays a generic frappe sample.
-
 }
