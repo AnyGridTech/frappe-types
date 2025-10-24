@@ -108,26 +108,12 @@ pnpm add -D @anygridtech/frappe-types
 
 ## ⚙️ Setup <a name = "setup"></a>
 
-Two ways to tell TypeScript about these global types:
+This package is designed to work with `@anygridtech/frappe-ts-tools`. You must set up `frappe-ts-tools` first:
 
-### ✅ Option 1: Explicit Import
+👉 **[Follow @anygridtech/frappe-ts-tools Setup Instructions](https://github.com/AnyGridTech/frappe-ts-tools#configuration)**
 
-```ts
-// in your_project/src/index.ts or your_project/globals.d.ts
-import '@anygridtech/frappe-types';
-```
 
-### ✅ Option 2: tsconfig.json
-
-```json
-{
-  "compilerOptions": {
-    "types": ["jquery", "@anygridtech/frappe-types"]
-  }
-}
-```
-
-⚠️ Remember: when you define `types`, you must explicitly list all global type packages (like `node`, `jest`, `jquery`, etc.).
+The `frappe-ts-tools` package handles all TypeScript compilation and build configuration automatically.
 
 ---
 
