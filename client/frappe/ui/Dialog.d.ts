@@ -174,11 +174,6 @@ export interface DialogField extends DocField {
   default?: any;
 
   /**
-   * Event handler triggered when the value of the field changes.
-   */
-  onchange?: (e: JQuery.ChangeEvent) => void;
-
-  /**
    * Event handler triggered when the field is clicked.
    * Generally used for buttons.
    */
@@ -218,11 +213,6 @@ export interface DialogField extends DocField {
    * A condition to make the field read-only dynamically.
    */
   read_only_depends_on?: string | (() => boolean);
-
-  /**
-   * A short description displayed under the field for additional context.
-   */
-  description?: string;
 }
 
 export interface EnhancedDialog extends Dialog {

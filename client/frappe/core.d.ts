@@ -135,6 +135,7 @@ export interface FrappeDoc {
    * Derived from runtime object; not explicitly documented.
    */
   [key: string]: any;
+  // Kept here for compatibility purposes. Use it carefully.
 }
 
 /**
@@ -808,6 +809,7 @@ type FieldDict = {
    */
   grid?: GridForm
   [key: string]: any; // Additional dynamic properties
+  // Kept here for compatibility purposes. Use it carefully.
 }
 
 type FieldsDict = Record<string, FieldDict>
@@ -867,6 +869,7 @@ export interface DocField {
   owner?: string; // User who created the field
   idx?: number; // Index of the field in the Doctype
   name?: string; // Unique name of the field in the DocField table
+  description?: string; // A short description displayed under the field for additional context
 
   // Permissions and Behavior
   allow_in_quick_entry?: boolean; // Whether the field is allowed in Quick Entry
@@ -934,8 +937,12 @@ export interface DocField {
   // Permissions
   permissions?: any[]; // Field-specific permissions
 
+  // Functions and Events
+  onchange?: (e: JQuery.ChangeEvent) => void; // A short description displayed under the field for additional context.
+
   // Custom Properties
   [key: string]: any; // Catch-all for additional custom properties
+  // Kept here for compatibility purposes. Use it carefully.
 }
 
 /**
@@ -959,7 +966,8 @@ interface DocMeta {
   sort_order: string; // Default sort order
   default_print_format: string; // Default print format
   fields_map?: Record<string, DocField>; // Map of fields for quick lookup
-  [key: string]: any; // Catch-all for additional metadata properties
+  [key: string]: any; // Catch-all for additional metadata properties. 
+  // Kept here for compatibility purposes. Use it carefully.
 }
 
 
