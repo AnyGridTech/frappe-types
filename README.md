@@ -63,12 +63,53 @@ With `@anygridtech/frappe-types`, you get:
 
 ## 📦 What’s Included? <a name = "whats_included"></a>
 
-Type definitions for commonly used global objects:
+### Global Objects & Functions
 
-- `frappe`: `frappe.call`, `frappe.db`, `frappe.ui.form`, `frappe.msgprint`, etc.  
-- `cur_frm`: The current form object (`cur_frm.doc`, `cur_frm.set_value`, etc.)  
-- `__`: Translation function  
-- Utilities: `msgprint`, `cstr`, `flt`, etc.  
+- **`frappe`** – Core Frappe namespace with:
+  - `frappe.call()` – Server-side RPC method calls
+  - `frappe.db` – Database operations (get_list, get_value, insert, etc.)
+  - `frappe.ui` – UI components (Dialog, Form, Scanner, ScriptManager)
+  - `frappe.model` – Document model utilities
+  - `frappe.utils` – Utility functions (nowdate, get_random, icon, eval, play_sound)
+  - `frappe.boot` – Boot configuration and cached data
+  - `frappe.datetime` – Date and time utilities
+  - `frappe.dom` – DOM manipulation helpers
+  - `frappe.msgprint()` – Display alert messages
+  - `frappe.show_alert()` – Floating notification alerts
+  - `frappe.confirm()` – Confirmation dialogs
+  - `frappe.prompt()` – User input prompts
+  - `frappe.throw()` – Error throwing with UI feedback
+  - `frappe.get_doc()` – Fetch documents from local cache
+  - `frappe.get_meta()` – Get DocType metadata
+  - `frappe.new_doc()` – Create and navigate to new documents
+  - `frappe.set_route()` / `frappe.get_route()` – Routing utilities
+  - `frappe.require()` / `frappe.provide()` – Asset and namespace management
+  - `frappe.session` – Current user session info
+
+- **`cur_frm`** – Current form instance with:
+  - `cur_frm.doc` – Document data
+  - `cur_frm.set_value()` – Set field values
+  - `cur_frm.get_field()` – Access field objects
+  - `cur_frm.add_custom_button()` – Add form buttons
+  - `cur_frm.refresh_field()` – Refresh specific fields
+  - `cur_frm.save()` / `cur_frm.reload_doc()` – Form operations
+  - Plus many more form methods and properties
+
+- **`__`** – Translation/internationalization function
+
+### TypeScript Interfaces
+
+- **`FrappeDoc`** – Base document interface with standard fields
+- **`FrappeForm<T>`** – Strongly-typed form interface
+- **`DocMeta`** – DocType metadata structure
+- **`DialogInstance`** – Dialog component types
+- **UI Components**: Dialog, Form, Scanner, ScriptManager
+
+### DocType Definitions
+
+Pre-built type definitions for common DocTypes:
+- **Frappe Core**: Company
+- **ERPNext**: Item, PurchaseOrder, SalesOrder, SerialNo, Workflow
 
 > 🧩 The list is continuously expanding as new globals and patterns are added.
 
